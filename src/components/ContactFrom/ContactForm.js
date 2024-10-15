@@ -43,7 +43,7 @@ const ContactForm = (props) => {
             <div className="row">
                 <div className="col-md-6">
                     <div className="form-group">
-                        <label className="input_title" htmlFor="input_name">Full Name
+                        <label className="input_title" htmlFor="input_name">Seu nome 
                         </label>
                         <input
                             value={forms.name}
@@ -52,13 +52,13 @@ const ContactForm = (props) => {
                             className="form-control"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="Goladria Gomez" />
+                            placeholder="Sterfany Mendez" />
                         {validator.message('name', forms.name, 'required|alpha_space')}
                     </div>
                 </div>
                 <div className="col-md-6">
                     <div className="form-group">
-                        <label className="input_title" htmlFor="input_email">Your Email
+                        <label className="input_title" htmlFor="input_email">Seu email
                         </label>
                         <input
                             value={forms.email}
@@ -67,13 +67,13 @@ const ContactForm = (props) => {
                             className="form-control"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="Techco@example.com" />
+                            placeholder="example@datasavvy.com.br" />
                         {validator.message('email', forms.email, 'required|email')}
                     </div>
                 </div>
                 <div className="col-12">
                     <div className="form-group">
-                        <label className="input_title" htmlFor="input_phone">Your Phone</label>
+                        <label className="input_title" htmlFor="input_phone">Seu número</label>
                         <input
                             value={forms.phone}
                             type="phone"
@@ -81,13 +81,13 @@ const ContactForm = (props) => {
                             className="form-control"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="+8250-3560 6565" />
+                            placeholder="+5561 981388239" />
                         {validator.message('phone', forms.phone, 'required|phone')}
                     </div>
                 </div>
                 <div className="col-12">
                     <div className="form-group">
-                        <label className="input_title" htmlFor="input_textarea">Message</label>
+                        <label className="input_title" htmlFor="input_textarea">Mensagem</label>
                         <textarea
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
@@ -100,7 +100,7 @@ const ContactForm = (props) => {
                         {validator.message('message', forms.message, 'required')}
                     </div>
                     <button type="submit" className="btn btn-primary">
-                        <span className="btn_label" data-text="Send Message">Send Message</span>
+                        <span className="btn_label" data-text="Send Message">Enviar mensagem</span>
                         <span className="btn_icon">
                             <i className="fa-solid fa-arrow-up-right"></i>
                         </span>
