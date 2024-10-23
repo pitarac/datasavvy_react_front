@@ -12,27 +12,26 @@ import FeaturesSection from '../../components/FeaturesSection/FeaturesSection';
 import TeamSection from '../../components/TeamSection/TeamSection';
 import CtaSection from '../../components/CtaSection/CtaSection';
 
-
 const AboutUsPage = (props) => {
+    const [isOpen, setOpen] = useState(false);
 
-    const [isOpen, setOpen] = useState(false)
     return (
         <Fragment>
             <Header />
             <main className="page_content about-page">
-                <PageTitle pageTitle={'About Us'} pagesub={'More Techco 😃'} pageTop={'About'}/>
+                <PageTitle pageTitle={'Sobre Nós'} pagesub={'Mais sobre a DataSavvy 😃'} pageTop={'Sobre'} />
                 <section className="intro_about_section section_space bg-light">
                     <div className="intro_about_content">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="image_wrap">
-                                        <img src={aImg} alt="Techco - About " />
+                                        <img src={aImg} alt="DataSavvy - Sobre " />
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="image_wrap position-relative">
-                                        <img src={aImg2} alt="Techco - About" />
+                                        <img src={aImg2} alt="DataSavvy - Sobre" />
                                         <button className="video_btn ripple_effect" onClick={() => setOpen(true)}>
                                             <span className="btn_icon">
                                                 <i className="fa-solid fa-play"></i>
@@ -48,16 +47,16 @@ const AboutUsPage = (props) => {
                             <div className="row justify-content-lg-between">
                                 <div className="col-lg-4">
                                     <div className="heading_focus_text">
-                                        About
-                                        <span className="badge bg-secondary text-white">Techco 🙂</span>
+                                        Sobre
+                                        <span className="badge bg-secondary text-white">DataSavvy 🙂</span>
                                     </div>
                                     <h2 className="heading_text mb-0">
-                                        We Provide You Flexible Services
+                                        Nós Oferecemos Serviços Flexíveis para Você
                                     </h2>
                                 </div>
                                 <div className="col-lg-6">
                                     <p className="heading_description mb-0">
-                                        At Techco, we pride ourselves on offering dynamic and  IT  to suit your specific requirements. Our flexible approach means we can  adjust our offerings to accommodate your evolving needs, whether you require comprehensive IT infrastructure support, strategic consultancy, software development
+                                        Na DataSavvy, temos orgulho em oferecer serviços dinâmicos de TI que atendem aos seus requisitos específicos. Nossa abordagem flexível significa que podemos ajustar nossas ofertas para acomodar suas necessidades em constante evolução, seja suporte completo de infraestrutura de TI, consultoria estratégica ou desenvolvimento de software.
                                     </p>
                                 </div>
                             </div>
@@ -76,4 +75,5 @@ const AboutUsPage = (props) => {
         </Fragment>
     )
 };
+
 export default AboutUsPage;

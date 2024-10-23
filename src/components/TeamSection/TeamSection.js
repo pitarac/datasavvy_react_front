@@ -1,31 +1,30 @@
 import React from 'react';
-import Teams from '../../api/team'
+import Teams from '../../api/team';
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import sImg1 from '../../images/icons/icon_facebook.svg'
-import sImg2 from '../../images/icons/icon_twitter_x.svg'
-import sImg3 from '../../images/icons/icon_linkedin.svg'
-import sImg4 from '../../images/icons/icon_instagram.svg'
+import sImg1 from '../../images/icons/icon_facebook.svg';
+import sImg2 from '../../images/icons/icon_twitter_x.svg';
+import sImg3 from '../../images/icons/icon_linkedin.svg';
+import sImg4 from '../../images/icons/icon_instagram.svg';
 
 
 const TeamSection = (props) => {
     const ClickHandler = () => {
         window.scrollTo(10, 0);
-    }
+    };
 
     return (
-
         <section className="team_section xb-hidden section_space">
             <div className="container">
                 <div className="heading_block text-center">
                     <div className="heading_focus_text">
-                        <span className="badge bg-secondary text-white">Our Expert</span>
-                        Team Members 😍
+                        <span className="badge bg-secondary text-white">Nossos Especialistas</span>
+                        Membros da Equipe 😍
                     </div>
                     <h2 className="heading_text mb-0">
-                        Top Skilled Experts
+                        Especialistas Altamente Qualificados
                     </h2>
                 </div>
 
@@ -50,8 +49,8 @@ const TeamSection = (props) => {
                             <SwiperSlide key={tm}>
                                 <div className="team_block">
                                     <div className="team_member_image">
-                                        <Link onClick={ClickHandler} className="image_wrap" aria-label="Team Details Button" to={`/team-single/${team.slug}`}>
-                                            <img src={team.tImg} alt="" />
+                                        <Link onClick={ClickHandler} className="image_wrap" aria-label="Detalhes do Membro da Equipe" to={`/team-single/${team.slug}`}>
+                                            <img src={team.tImg} alt="Imagem do Membro da Equipe" />
                                             <i className="fa-solid fa-arrow-up-right"></i>
                                         </Link>
                                     </div>
@@ -63,22 +62,22 @@ const TeamSection = (props) => {
                                         <ul className="social_icons_block unordered_list justify-content-center">
                                             <li>
                                                 <Link onClick={ClickHandler} to={`/team-single/${team.slug}`}>
-                                                    <img src={sImg1} alt="Icon Facebook" />
+                                                    <img src={sImg1} alt="Ícone do Facebook" />
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link onClick={ClickHandler} to={`/team-single/${team.slug}`}>
-                                                    <img src={sImg2} alt="Icon Twitter X" />
+                                                    <img src={sImg2} alt="Ícone do Twitter X" />
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link onClick={ClickHandler} to={`/team-single/${team.slug}`}>
-                                                    <img src={sImg3} alt="Icon Linkedin" />
+                                                    <img src={sImg3} alt="Ícone do LinkedIn" />
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link onClick={ClickHandler} to={`/team-single/${team.slug}`}>
-                                                    <img src={sImg4} alt="Icon Instagram" />
+                                                    <img src={sImg4} alt="Ícone do Instagram" />
                                                 </Link>
                                             </li>
                                         </ul>
@@ -92,7 +91,7 @@ const TeamSection = (props) => {
                 <div className="container">
                     <div className="btns_group pb-0">
                         <Link className="btn btn-outline-light" to="/team">
-                            <span className="btn_label" data-text="Our All Experts">Our All Experts</span>
+                            <span className="btn_label" data-text="Todos os Nossos Especialistas">Todos os Nossos Especialistas</span>
                             <span className="btn_icon">
                                 <i className="fa-solid fa-arrow-up-right"></i>
                             </span>
@@ -102,6 +101,6 @@ const TeamSection = (props) => {
             </div>
         </section>
     );
-}
+};
 
 export default TeamSection;

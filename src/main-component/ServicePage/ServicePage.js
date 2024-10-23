@@ -19,31 +19,31 @@ const ServicePage = (props) => {
         <Fragment>
             <Header />
             <main className="page_content about-page">
-                <PageTitle pageTitle={'Our Services'} pagesub={'Services 😍'} pageTop={'Our Main'} />
+                <PageTitle pageTitle={'Nossos Serviços'} pagesub={'Serviços 😍'} pageTop={'Principais Serviços'} />
                 <section className="about_section section_space bg-light">
                     <div className="container">
                         <div className="row align-items-center justify-content-lg-between">
                             <div className="col-lg-5 order-lg-last">
                                 <div className="team_cartoon_image">
-                                    <img src={srImg} alt="Service Cartoon"/>
+                                    <img src={srImg} alt="Ilustração de Serviço"/>
                                 </div>
                             </div>
                             <div className="col-lg-5">
                                 <div className="about_content">
                                     <div className="heading_block">
                                         <div className="heading_focus_text">
-                                            We Are
-                                            <span className="badge bg-secondary text-white">IT Guidance 🙂</span>
+                                            Nós Somos
+                                            <span className="badge bg-secondary text-white">Orientação em TI 🙂</span>
                                         </div>
                                         <h2 className="heading_text">
-                                            Tailored IT Solutions for Your Success
+                                            Soluções de TI Personalizadas para o Seu Sucesso
                                         </h2>
                                         <p className="heading_description mb-0">
-                                            we understand that every business is unique, with its own set of challenges, goals, and aspirations. That's why we offer tailored IT solutions designed.
+                                            Entendemos que cada negócio é único, com seu próprio conjunto de desafios, metas e aspirações. É por isso que oferecemos soluções de TI sob medida, projetadas para atender às suas necessidades específicas.
                                         </p>
                                     </div>
                                     <Link onClick={ClickHandler} to={'/service'} className="btn">
-                                        <span className="btn_label" data-text="Talk to an Expart">Talk to an Expart</span>
+                                        <span className="btn_label" data-text="Fale com um Especialista">Fale com um Especialista</span>
                                         <span className="btn_icon">
                                             <i className="fa-solid fa-arrow-up-right"></i>
                                         </span>

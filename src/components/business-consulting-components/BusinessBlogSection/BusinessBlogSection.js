@@ -17,10 +17,10 @@ const BusinessBlogSection = (props) => {
                     <div className="col-lg-7">
                         <div className="heading_block text-center">
                             <h2 className="heading_text">
-                                Explore Our Latest Perspectives and Expertise
+                                Explore Nossas Perspectivas e Expertise Mais Recentes
                             </h2>
                             <p className="heading_description text-dark mb-0">
-                                Stay Informed, Stay Ahead: Discover Fresh Ideas and Strategies
+                                Mantenha-se Informado, Mantenha-se à Frente: Descubra Ideias e Estratégias Novas
                             </p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const BusinessBlogSection = (props) => {
                             <div className="blog_post_block_2">
                                 <div className="blog_post_image">
                                     <Link onClick={ClickHandler} to={`/blog-single/${blog.slug}`}>
-                                        <img src={blog.screens} alt="Techco Blog Post" />
+                                        <img src={blog.screens} alt="DataSavvy Blog Post" />
                                     </Link>
                                 </div>
                                 <div className="blog_post_content">
@@ -47,7 +47,7 @@ const BusinessBlogSection = (props) => {
                                     <ul className="post_meta unordered_list">
                                         <li>
                                             <Link onClick={ClickHandler} to={`/blog-single/${blog.slug}`}>
-                                                By <b>{blog.author}</b>
+                                                Por <b>{blog.author}</b>
                                             </Link>
                                         </li>
                                         <li>

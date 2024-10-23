@@ -12,7 +12,6 @@ import aIcon4 from '../../../images/icons/icon_global.svg'
 import aIcon5 from '../../../images/shapes/shape_line.webp'
 import shape1 from '../../../images/shapes/shape_space_2.svg'
 
-
 const About = (props) => {
 
   const ClickHandler = () => {
@@ -26,26 +25,26 @@ const About = (props) => {
           <div className="col-lg-7 order-lg-last">
             <div className="about_image_2">
               <div className="image_wrap">
-                <img src={about1} alt="Techco - About" />
+                <img src={about1} alt="DataSavvy - Sobre" />
               </div>
               <div className="about_funfact_info" style={{ backgroundImage: `url(${Bg2})` }}>
                 <div className="customer_count">
                   <ul className="unordered_list">
                     <li>
-                      <img src={aIcon1} alt="Customer Avatar" />
+                      <img src={aIcon1} alt="Avatar de Cliente" />
                     </li>
                     <li>
-                      <img src={aIcon2} alt="Customer Avatar" />
+                      <img src={aIcon2} alt="Avatar de Cliente" />
                     </li>
                     <li>
-                      <img src={aIcon3} alt="Customer Avatar" />
+                      <img src={aIcon3} alt="Avatar de Cliente" />
                     </li>
                     <li>
                       <span>6k+</span>
                     </li>
                   </ul>
                   <p className="mb-0">
-                    Happy Customer
+                    Clientes Satisfeitos
                   </p>
                 </div>
                 <div className="about_funfact_counter">
@@ -54,28 +53,28 @@ const About = (props) => {
                       <span className="odometer" data-count="6">0</span>
                       <span>K+</span>
                     </div>
-                    <h3 className="funfact_title mb-0">Projects Done</h3>
+                    <h3 className="funfact_title mb-0">Projetos Concluídos</h3>
                   </div>
                   <div className="funfact_item">
                     <div className="counter_value">
                       <span className="odometer" data-count="100">0</span>
                       <span>%</span>
                     </div>
-                    <h3 className="funfact_title mb-0">Results Guaranteed</h3>
+                    <h3 className="funfact_title mb-0">Resultados Garantidos</h3>
                   </div>
                 </div>
                 <a className="btn btn-primary" href="about.html">
-                  <span className="btn_label" data-text="Learn More">Learn More</span>
+                  <span className="btn_label" data-text="Saiba Mais">Saiba Mais</span>
                   <span className="btn_icon">
                     <i className="fa-solid fa-arrow-up-right"></i>
                   </span>
                 </a>
                 <div className="icon_globe">
-                  <img src={aIcon4} alt="Icon Globe" />
+                  <img src={aIcon4} alt="Ícone Globo" />
                 </div>
               </div>
               <div className="space_line">
-                <img src={aIcon5} alt="Shape Line" />
+                <img src={aIcon5} alt="Linha Decorativa" />
               </div>
             </div>
           </div>
@@ -83,13 +82,13 @@ const About = (props) => {
             <div className="about_content">
               <div className="heading_block mb-0 text-white">
                 <div className="heading_focus_text has_underline d-inline-flex" style={{ backgroundImage: `url(${Bg3})` }}>
-                  About Us
+                  Sobre Nós
                 </div>
                 <h2 className="heading_text">
-                  Techco <mark>Mission & Goal</mark>
+                  DataSavvy <mark>Missão & Objetivo</mark>
                 </h2>
                 <p className="heading_description mb-0">
-                  At Techco, our mission is to empower businesses through innovative software solutions that streamline operations, foster growth, and drive success. With a commitment to excellence and customer satisfaction we strive.
+                  Na DataSavvy, nossa missão é capacitar empresas através de soluções inovadoras de dados e tecnologia, que otimizam operações, fomentam o crescimento e garantem o sucesso. Com um compromisso com a excelência e a satisfação do cliente, buscamos transformar dados em decisões estratégicas e crescimento sustentável.
                 </p>
               </div>
             </div>
@@ -99,10 +98,10 @@ const About = (props) => {
         <div className="pt-170">
           <div className="heading_block text-center text-white">
             <div className="heading_focus_text has_underline d-inline-flex" style={{ backgroundImage: `url(${Bg3})` }}>
-              Case Studies
+              Estudos de Caso
             </div>
             <h2 className="heading_text mb-0">
-              Our latest <mark>Case</mark> Studies
+              Nossos Últimos <mark>Estudos de Caso</mark>
             </h2>
           </div>
 
@@ -110,7 +109,7 @@ const About = (props) => {
             {Project.slice(6, 9).map((project, prj) => (
               <div className="case_study_block" key={prj}>
                 <div className="case_study_image">
-                  <img src={project.pImg} alt="Techco - Cases" />
+                  <img src={project.pImg} alt="DataSavvy - Casos" />
                 </div>
                 <div className="case_study_content">
                   <ul className="category_list unordered_list text-uppercase">
@@ -125,25 +124,25 @@ const About = (props) => {
                   <ul className="icon_list unordered_list">
                     <li>
                       <span className="icon_list_text">
-                        <strong className="text-dark">Industry:</strong> {project.Industry}
+                        <strong className="text-dark">Indústria:</strong> {project.Industry}
                       </span>
                     </li>
                     <li>
                       <span className="icon_list_text">
-                        <strong className="text-dark">Country:</strong> {project.Country}
+                        <strong className="text-dark">País:</strong> {project.Country}
                       </span>
                     </li>
                   </ul>
-                  <ul className="case_technologies unordered_list" data-text="Core Technologies:">
+                  <ul className="case_technologies unordered_list" data-text="Tecnologias Utilizadas:">
                     <li>
                       <img src={project.Technologies1} alt="Angular" />
                     </li>
                     <li>
-                      <img src={project.Technologies2} alt="Elephent" />
+                      <img src={project.Technologies2} alt="Elephant" />
                     </li>
                   </ul>
                   <Link onClick={ClickHandler} to={`/portfolio_details/${project.slug}`} className="btn btn-primary">
-                    <span className="btn_label" data-text="Read Case">Read Case</span>
+                    <span className="btn_label" data-text="Leia o Caso">Leia o Caso</span>
                     <span className="btn_icon">
                       <i className="fa-solid fa-arrow-up-right"></i>
                     </span>
@@ -155,7 +154,7 @@ const About = (props) => {
 
           <div className="btns_group pb-0">
             <Link onClick={ClickHandler} to="/portfolio" className="btn btn-primary">
-              <span className="btn_label" data-text="View More Cases Study">View More Cases Study</span>
+              <span className="btn_label" data-text="Ver Mais Estudos de Caso">Ver Mais Estudos de Caso</span>
               <span className="btn_icon">
                 <i className="fa-solid fa-arrow-up-right"></i>
               </span>
@@ -164,7 +163,7 @@ const About = (props) => {
         </div>
       </div>
       <div className="decoration_item shape_image_1">
-        <img src={shape1} alt="Techco Shape" />
+        <img src={shape1} alt="Forma Decorativa DataSavvy" />
       </div>
     </section>
   )

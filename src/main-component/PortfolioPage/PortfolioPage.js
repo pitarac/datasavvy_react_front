@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Project from '../../api/project';
 import { Link } from "react-router-dom";
 import Header from '../../components/header/Header';
@@ -9,7 +9,14 @@ import CtaSection from '../../components/CtaSection/CtaSection';
 
 const PortfolioPage = (props) => {
 
-    const [activeFilter, setActiveFilter] = useState('all');
+    const [activeFilter, setActiveFilter] = useState('todos');
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        // Extrair categorias únicas dos projetos
+        const uniqueCategories = ['todos', ...new Set(Project.map(project => project.category).filter(category => category))];
+        setCategories(uniqueCategories);
+    }, []);
 
     const ClickHandler = () => {
         window.scrollTo(10, 0);
@@ -19,24 +26,24 @@ const PortfolioPage = (props) => {
         setActiveFilter(filter);
     }
 
-    const filteredProjects = activeFilter === 'all'
-        ? Project.slice(9, 18)
-        : Project.slice(9, 18).filter(project => project.category === activeFilter);
+    const filteredProjects = activeFilter === 'todos'
+        ? Project
+        : Project.filter(project => project.category === activeFilter);
 
     return (
         <Fragment>
             <Header />
             <main className="page_content about-page">
-                <PageTitle pageTitle={'Our Portfolio'} pagesub={'Portfolio 😍'} pageTop={'Our'} />
+                <PageTitle pageTitle={'Nosso Portfólio'} pagesub={'Portfólio 😍'} pageTop={'Nosso'} />
                 <section className="portfolio_section section_space bg-light">
                     <div className="container">
                         <div className="filter_elements_nav">
                             <ul className="unordered_list justify-content-center">
-                                <li className={activeFilter === 'all' ? 'active' : ''} onClick={() => handleFilterClick('all')}>See All</li>
-                                <li className={activeFilter === 'technology' ? 'active' : ''} onClick={() => handleFilterClick('technology')}>Technology</li>
-                                <li className={activeFilter === 'helpdesk' ? 'active' : ''} onClick={() => handleFilterClick('helpdesk')}>Helpdesk</li>
-                                <li className={activeFilter === 'analysis' ? 'active' : ''} onClick={() => handleFilterClick('analysis')}>Analysis</li>
-                                <li className={activeFilter === 'marketing' ? 'active' : ''} onClick={() => handleFilterClick('marketing')}>Marketing</li>
+                                {categories.map((category, index) => (
+                                    <li key={index} className={activeFilter === category ? 'active' : ''} onClick={() => handleFilterClick(category)}>
+                                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                         <div className="filter_elements_wrapper row">
@@ -45,7 +52,7 @@ const PortfolioPage = (props) => {
                                     <div className="portfolio_block portfolio_layout_2">
                                         <div className="portfolio_image">
                                             <Link onClick={ClickHandler} className="portfolio_image_wrap bg-light" to={`/portfolio_details/${project.slug}`}>
-                                                <img src={project.pImg} alt="Mobile App Design" />
+                                                <img src={project.pImg} alt="Design de Aplicativo Mobile" />
                                             </Link>
                                         </div>
                                         <div className="portfolio_content">

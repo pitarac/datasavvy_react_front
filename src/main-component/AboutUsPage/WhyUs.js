@@ -9,33 +9,30 @@ import sIcon6 from '../../images/icons/icon_microscope.svg'
 
 const Policy = [
     {
-        title: 'Quality Comes First',
+        title: 'Qualidade em Primeiro Lugar',
         icon: sIcon1,
     },
     {
-        title: 'Flexible Cooperation',
+        title: 'Cooperação Flexível',
         icon: sIcon2,
     },
     {
-        title: 'On-time Delivery',
+        title: 'Entrega Pontual',
         icon: sIcon3,
     },
     {
-        title: 'Transparent Costs',
+        title: 'Custos Transparentes',
         icon: sIcon4,
     },
     {
-        title: 'Qualified Developers',
+        title: 'Desenvolvedores Qualificados',
         icon: sIcon5,
     },
     {
-        title: 'Quick Scale-up',
+        title: 'Escalonamento Rápido',
         icon: sIcon6,
     },
-
-
 ]
-
 
 const WhyUs = (props) => {
 
@@ -45,18 +42,18 @@ const WhyUs = (props) => {
                 <div className="row align-items-center justify-content-lg-between">
                     <div className="col-lg-6">
                         <div className="image_wrap">
-                            <img src={wImg} alt="Techco - About"/>
+                            <img src={wImg} alt="DataSavvy - Sobre"/>
                         </div>
                     </div>
                     <div className="col-lg-6">
                         <div className="ps-lg-5">
                             <div className="heading_block">
                                 <div className="heading_focus_text">
-                                    <span className="badge bg-secondary text-white">Why Us</span>
-                                    Better
+                                    <span className="badge bg-secondary text-white">Por Que Nós?</span>
+                                    Melhor
                                 </div>
                                 <h2 className="heading_text mb-0">
-                                    Why Our Services are Better Than Others?
+                                    Por que nossos serviços são melhores que os outros?
                                 </h2>
                             </div>
                             <ul className="service_facilities_group unordered_list">
@@ -64,7 +61,7 @@ const WhyUs = (props) => {
                                     <li key={pitem}>
                                         <strong className="iconbox_block layout_icon_left">
                                             <span className="iconbox_icon">
-                                                <img src={policy.icon} alt="Dollar SVG Icon" />
+                                                <img src={policy.icon} alt="Ícone de Política" />
                                             </span>
                                             <span className="iconbox_content">
                                                 <strong className="iconbox_title mb-0">{policy.title}</strong>

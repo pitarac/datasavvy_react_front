@@ -12,11 +12,11 @@ const ServiceSection = (props) => {
             <div className="container">
                 <div className="heading_block text-center">
                     <div className="heading_focus_text">
-                        Our
-                        <span className="badge bg-secondary text-white">Specialize</span>
+                        Nossos
+                        <span className="badge bg-secondary text-white">Especialidades</span>
                     </div>
                     <h2 className="heading_text mb-0">
-                        Featured Services
+                        Serviços Destacados
                     </h2>
                 </div>
 
@@ -26,7 +26,7 @@ const ServiceSection = (props) => {
                             {service.title ?
                                 <div className="service_block">
                                     <div className="service_image">
-                                        <img src={service.sImg} alt="IT Management Services" />
+                                        <img src={service.sImg} alt="Serviços de Gestão de TI" />
                                     </div>
                                     <div className="service_content">
                                         <h3 className="service_title"><Link onClick={ClickHandler} to={`/service-single/${service.slug}`}>{service.title}</Link>
@@ -50,7 +50,7 @@ const ServiceSection = (props) => {
 
                 <div className="btns_group pb-0">
                     <Link onClick={ClickHandler} className="btn btn-outline-light" to="/service">
-                        <span className="btn_label" data-text="More Services">More Services</span>
+                        <span className="btn_label" data-text="Mais Serviços">Mais Serviços</span>
                         <span className="btn_icon">
                             <i className="fa-solid fa-arrow-up-right"></i>
                         </span>

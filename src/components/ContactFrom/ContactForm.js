@@ -10,9 +10,19 @@ const ContactForm = (props) => {
         phone: '',
         message: ''
     });
+    
+    // Adicione mensagens personalizadas para cada tipo de validação
     const [validator] = useState(new SimpleReactValidator({
-        className: 'errorMessage'
+        className: 'errorMessage',
+        messages: {
+            required: ':attribute é obrigatório.',
+            email: 'Por favor, insira um endereço de e-mail válido.',
+            alpha_space: ':attribute deve conter apenas letras e espaços.',
+            phone: 'Por favor, insira um número de telefone válido.',
+        },
+        locale: 'pt' // opcional
     }));
+
     const changeHandler = e => {
         setForms({ ...forms, [e.target.name]: e.target.value })
         if (validator.allValid()) {
@@ -48,12 +58,12 @@ const ContactForm = (props) => {
                         <input
                             value={forms.name}
                             type="text"
-                            name="name"
+                            name="nome"
                             className="form-control"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
                             placeholder="Sterfany Mendez" />
-                        {validator.message('name', forms.name, 'required|alpha_space')}
+                        {validator.message('Nome', forms.name, 'required|alpha_space')}
                     </div>
                 </div>
                 <div className="col-md-6">
@@ -68,7 +78,7 @@ const ContactForm = (props) => {
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
                             placeholder="example@datasavvy.com.br" />
-                        {validator.message('email', forms.email, 'required|email')}
+                        {validator.message('E-mail', forms.email, 'required|email')}
                     </div>
                 </div>
                 <div className="col-12">
@@ -81,8 +91,8 @@ const ContactForm = (props) => {
                             className="form-control"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="+5561 981388239" />
-                        {validator.message('phone', forms.phone, 'required|phone')}
+                            placeholder="+55 61 981388239" />
+                        {validator.message('Seu número', forms.phone, 'required|phone')}
                     </div>
                 </div>
                 <div className="col-12">
@@ -95,7 +105,7 @@ const ContactForm = (props) => {
                             type="text"
                             name="message"
                             className="form-control"
-                            placeholder="How can we help you?">
+                            placeholder="Como podemos lhe ajudar?">
                         </textarea>
                         {validator.message('message', forms.message, 'required')}
                     </div>

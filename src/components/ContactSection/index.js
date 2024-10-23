@@ -14,12 +14,12 @@ const ContactSection = (props) => {
                     <div className="col-lg-3 col-md-6 col-sm-6">
                         <div className="iconbox_block text-center">
                             <div className="iconbox_icon">
-                                <img src={icon1} alt="Map Mark SVG Icon" />
+                                <img src={icon1} alt="Ícone de Localização" />
                             </div>
                             <div className="iconbox_content">
-                                <h3 className="iconbox_title">Location</h3>
+                                <h3 className="iconbox_title">Localização</h3>
                                 <p className="mb-0">
-                                    Sunshine Business Park Sector-94, Poland
+                                    Sunshine Business Park, Setor-94, Polônia
                                 </p>
                             </div>
                         </div>
@@ -27,10 +27,10 @@ const ContactSection = (props) => {
                     <div className="col-lg-3 col-md-6 col-sm-6">
                         <div className="iconbox_block text-center">
                             <div className="iconbox_icon">
-                                <img src={icon2} alt="Calling SVG Icon" />
+                                <img src={icon2} alt="Ícone de Contato" />
                             </div>
                             <div className="iconbox_content">
-                                <h3 className="iconbox_title">Contact</h3>
+                                <h3 className="iconbox_title">Contato</h3>
                                 <p className="mb-0">+88(0) 555-0108</p>
                                 <div className="mb-0">+88(0) 555-01117</div>
                             </div>
@@ -39,7 +39,7 @@ const ContactSection = (props) => {
                     <div className="col-lg-3 col-md-6 col-sm-6">
                         <div className="iconbox_block text-center">
                             <div className="iconbox_icon">
-                                <img src={icon3} alt="User Check SVG Icon" />
+                                <img src={icon3} alt="Ícone de Email" />
                             </div>
                             <div className="iconbox_content">
                                 <h3 className="iconbox_title">Email</h3>
@@ -51,12 +51,12 @@ const ContactSection = (props) => {
                     <div className="col-lg-3 col-md-6 col-sm-6">
                         <div className="iconbox_block text-center">
                             <div className="iconbox_icon">
-                                <img src={icon4} alt="Calendar SVG Icon" />
+                                <img src={icon4} alt="Ícone de Calendário" />
                             </div>
                             <div className="iconbox_content">
-                                <h3 className="iconbox_title">Visit Between</h3>
-                                <p className="mb-0">Mon - Sat: 8.00-5.00</p>
-                                <p className="mb-0">Sunday: Closed</p>
+                                <h3 className="iconbox_title">Horário de Visita</h3>
+                                <p className="mb-0">Seg - Sáb: 8:00 - 17:00</p>
+                                <p className="mb-0">Domingo: Fechado</p>
                             </div>
                         </div>
                     </div>
@@ -65,9 +65,9 @@ const ContactSection = (props) => {
                     <div className="row justify-content-lg-between">
                         <div className="col-lg-7">
                             <div className="contact_form mb-0">
-                                <h3 className="details_item_info_title mb-1">Send Us A Message</h3>
+                                <h3 className="details_item_info_title mb-1">Envie-nos Uma Mensagem</h3>
                                 <p className="mb-5">
-                                    Give us chance to serve and bring magic to your brand.
+                                    Dê-nos a chance de servir e trazer magia para a sua marca.
                                 </p>
                                 <ContactForm />
                             </div>
