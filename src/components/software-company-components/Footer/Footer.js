@@ -349,7 +349,9 @@ const Footer = (props) => {
       <div className="footer_bottom" style={{ backgroundImage: `url(${Bg2})` }}>
         <div className="container d-md-flex align-items-md-center justify-content-md-between">
           <p className="copyright_text m-0">
-            Copyright © 2024 Techco, All rights reserved.
+          Copyright © 2024 Data Savvy Consultoria e Tecnologia. CNPJ: 50.287.723/0001-91 Todos os direitos reservados.
+
+
           </p>
           <ul className="icon_list unordered_list">
             <li>
