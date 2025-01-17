@@ -13,7 +13,7 @@ const BlogPage = (props) => {
         <Fragment>
             <Header />
             <main className="page_content blog-page">
-                <PageTitle pageTitle={'Our Latest Blog'} pagesub={'Blogs😍'} pageTop={'Our'}/>
+                <PageTitle pageTitle={'Veja nosso Blog'} pagesub={'Blog😍'} pageTop={'Nosso'}/>
                 <BlogList/>
             </main>
             <CtaSection />

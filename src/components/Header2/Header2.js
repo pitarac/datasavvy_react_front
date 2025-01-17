@@ -7,10 +7,7 @@ import icon4 from '../../images/icons/icon_tag_2.svg';
 import icon5 from '../../images/icons/icon_user_2.svg';
 import icon6 from '../../images/icons/icon_users.svg';
 import icon7 from '../../images/icons/icon_pen.svg';
-import icon8 from '../../images/clients/client_logo_9.webp';
-import icon9 from '../../images/clients/client_logo_10.webp';
-import icon10 from '../../images/avatar/avatar_7.webp';
-import icon11 from '../../images/icons/icon_quote.svg';
+
 import logo from '../../images/site_logo/site_logo_2.svg';
 import logo2 from '../../images/site_logo/site_logo_3.svg';
 import cases from '../../images/case/case_image_4.webp';

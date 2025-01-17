@@ -1,0 +1,49 @@
+.admin-header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-header-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.admin-header-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.admin-header-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-header-link:hover {
+  text-decoration: underline;
+}
+
+.admin-header-logout {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.admin-header-logout:hover {
+  background-color: #c0392b;
+}

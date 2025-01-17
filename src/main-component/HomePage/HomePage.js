@@ -13,7 +13,7 @@ import CtaSection from '../../components/CtaSection/CtaSection';
 import Footer from '../../components/footer/Footer';
 import Scrollbar from '../../components/scrollbar/scrollbar';
 
-
+//
 const HomePage = () => {
 
     return (

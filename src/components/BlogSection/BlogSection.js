@@ -18,10 +18,10 @@ const BlogSection = (props) => {
                 <div className="heading_block text-center">
                     <div className="heading_focus_text">
                         <span className="badge bg-secondary text-white">Blog</span>
-                        Updates
+                        Atualizações
                     </div>
                     <h2 className="heading_text mb-0">
-                        Latest Articles Posts
+                        Artigos e postagens 
                     </h2>
                 </div>
 
@@ -59,7 +59,7 @@ const BlogSection = (props) => {
                                         <span className="btn_icon">
                                             <i className="fa-solid fa-arrow-up-right"></i>
                                         </span>
-                                        <span className="btn_label">Read More</span>
+                                        <span className="btn_label">leia mais</span>
                                     </Link>
                                 </div>
                             </div>

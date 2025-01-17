@@ -10,26 +10,26 @@ import fimg from '../../images/about/about_image_1.webp'
 
 const FunFact = [
     {
-        title: '25',
-        subTitle: 'Years of experience',
+        title: '7',
+        subTitle: 'Anos de experiência ',
         symbol: '+',
         icon: sIcon1,
     },
     {
         title: '280',
-        subTitle: 'Success Stories',
+        subTitle: 'Projetos já entregues',
         symbol: '+',
         icon: sIcon2,
     },
     {
-        title: '5.6',
-        subTitle: 'Companies Trust Us',
+        title: '84.5',
+        subTitle: 'Empresas que confiam em nós',
         symbol: 'K+',
         icon: sIcon3,
     },
     {
         title: '100',
-        subTitle: 'Results Guaranteed',
+        subTitle: 'Resultados alinhados',
         symbol: '%',
         icon: sIcon4,
     },
@@ -46,8 +46,8 @@ const FeaturesSection = (props) => {
                 <div className="section_space pt-0">
                     <div className="heading_block text-center">
                         <div className="heading_focus_text mb-0">
-                            <span className="badge bg-secondary text-white">Brand We</span>
-                            Work With
+                            <span className="badge bg-secondary text-white">Empresas</span>
+                            que são clientes
                         </div>
                     </div>
                     <PartnerSection />
@@ -82,7 +82,7 @@ const FeaturesSection = (props) => {
                             </div>
                             <div className="content_wrap">
                                 <h3 className="title_text mb-0">
-                                    <b className="d-block">12000+</b> employees in 30 countries in Europe
+                                    <b className="d-block">+120</b> Projetos com nível nacional
                                 </h3>
                             </div>
                         </div>

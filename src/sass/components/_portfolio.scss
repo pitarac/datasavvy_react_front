@@ -1,15 +1,60 @@
 /* 4.07 - Portfolio - Start
 ================================================== */
+/* Estilos para o bloco de portfólio */
 .portfolio_block {
-	overflow: hidden;
-	transition: var(--bs-transition);
-	background-color: var(--bs-white);
-	border-radius: var(--bs-border-radius-sm);
-	box-shadow: 0 1px 2px 0 rgba(174, 191, 210, 0.30);
+	 /* Oculta qualquer conteúdo que exceda os limites do elemento */
+	 overflow: hidden;
+
+	 /* Define a transição para propriedades que suportam transições suaves */
+	 transition: var(--bs-transition);
+
+	 /* Define a cor de fundo usando a variável CSS --bs-white */
+	 background-color: var(--bs-white);
+
+	 /* Aplica um raio de borda pequeno usando a variável CSS --bs-border-radius-sm */
+	 border-radius: var(--bs-border-radius-sm);
+
+	 /* Adiciona uma sombra sutil ao elemento para dar profundidade */
+	 box-shadow: 0 1px 2px 0 rgba(174, 191, 210, 0.30);
+
+	/* Estilos para o elemento com a classe .portfolio_image_wrap dentro de .portfolio_block */
 	.portfolio_image_wrap {
-		display: block;
-		overflow: hidden;
+			/* Define o display como bloco para ocupar toda a largura disponível */
+			display: block;
+
+			/* Oculta qualquer conteúdo que exceda os limites do elemento */
+			overflow: hidden;
+
+			/* Define a largura e altura fixas para garantir consistência */
+			width: 100%; /* Ajusta para ocupar toda a largura do contêiner */
+			height: 400px; /* Define uma altura fixa (ajuste conforme necessário) */
+
+			/* Centraliza a imagem dentro do contêiner */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			/* Adiciona um fundo de cor (opcional) para realçar a imagem */
+
+			/* Garante que a imagem não ultrapasse os limites do contêiner */
+			img {
+					/* Define a largura e altura máximas da imagem */
+					max-width: 100%;
+					max-height: 100%;
+
+					/* Mantém a proporção da imagem e cobre o contêiner */
+					object-fit: cover;
+
+					/* Opcional: adiciona uma transição suave para efeitos hover */
+					transition: transform 0.3s ease;
+			}
+
+			/* Efeito de zoom ao passar o mouse sobre a imagem */
+			&:hover img {
+					transform: scale(2.05);
+			}
 	}
+
 	.portfolio_content {
 		position: relative;
 		padding: 25px 30px 28px;
@@ -35,9 +80,11 @@
 	}
 
 	.btn {
-		top: 26px;
-		right: 30px;
-		position: absolute;
+		/*top: 26px;
+		//right: 30px;
+		position: absolute;*/
+		align-self: flex-end;
+
 	}
 
 	&:hover {

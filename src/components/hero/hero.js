@@ -9,7 +9,7 @@ import icon from '../../images/icons/icon_stars_trustpilot.svg';
 import avatar1 from '../../images/avatar/avatar_1.webp';
 import avatar2 from '../../images/avatar/avatar_2.webp';
 import avatar3 from '../../images/avatar/avatar_3.webp';
-
+ //
 const Hero = () => {
 
     return (
