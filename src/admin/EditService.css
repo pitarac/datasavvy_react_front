@@ -1,0 +1,47 @@
+.admin-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.service-form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.service-form input, 
+.service-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.service-form img {
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.gallery-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.outcome-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.outcome-item button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}

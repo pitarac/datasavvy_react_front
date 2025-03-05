@@ -1,8 +1,6 @@
-// src/pages/ServiceSinglePage/ServiceSinglePage.js
-
-import React, { Fragment, useState } from 'react';
-import Services from '../../api/service';
+import React, { Fragment, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { fetchServiceBySlug } from '../../api/service';
 import ModalVideo from 'react-modal-video';
 import Header from '../../components/header/Header';
 import PageTitle from '../../components/pagetitle/PageTitle';
@@ -13,24 +11,33 @@ import ProcessTechnology from '../../components/software-company-components/Proc
 
 import icon from '../../images/icons/icon_check_3.svg';
 
-const ServiceSinglePage = (props) => {
-
+const ServiceSinglePage = () => {
     const { slug } = useParams();
-
-    const ServiceDetails = Services.find(item => item.slug === slug);
-
+    const [service, setService] = useState(null);
     const [isOpen, setOpen] = useState(false);
+
+    useEffect(() => {
+        const loadService = async () => {
+            const data = await fetchServiceBySlug(slug);
+            setService(data);
+        };
+        loadService();
+    }, [slug]);
+
+    if (!service) {
+        return <div>Carregando...</div>;
+    }
 
     return (
         <Fragment>
             <Header />
             <main className="page_content service-single-page">
-                <PageTitle pageTitle={ServiceDetails.title} pagesub={'Detalhes'} pageTop={'Serviços'} />
+                <PageTitle pageTitle={service.title} pagesub={'Detalhes'} pageTop={'Serviços'} />
                 <section className="service_details_section section_space bg-light">
                     <div className="container">
                         <div className="details_item_image position-relative">
-                            <img src={ServiceDetails.sImg} alt={ServiceDetails.title} />
-                            {ServiceDetails.videoId && (
+                            <img src={`http://localhost:5001${service.sImg}`} alt={service.title} />
+                            {service.videoId && (
                                 <button className="video_btn ripple_effect" onClick={() => setOpen(true)}>
                                     <span className="btn_icon">
                                         <i className="fa-solid fa-play"></i>
@@ -38,54 +45,24 @@ const ServiceSinglePage = (props) => {
                                 </button>
                             )}
                         </div>
-                        <h2 className="details_item_title">{ServiceDetails.title}</h2>
-                        <p>{ServiceDetails.longDescription}</p>
-                        <p>{ServiceDetails.additionalInfo}</p>
+                        <h2 className="details_item_title">{service.title}</h2>
+                        <p>{service.longDescription}</p>
+                        <p>{service.additionalInfo}</p>
                         <ProcessTechnology />
-                        {ServiceDetails.serviceOutcome && (
+                        {service.serviceOutcome && (
                             <>
                                 <h3 className="details_item_info_title">Resultados do Serviço</h3>
-                                <p className="mb-4">
-                                    Aqui estão alguns pontos-chave associados ao nosso serviço de {ServiceDetails.title}:
-                                </p>
-                                <div className="row mb-4">
-                                    <div className="col-lg-6">
-                                        <ul className="icon_list unordered_list_block">
-                                            {ServiceDetails.serviceOutcome.slice(0, Math.ceil(ServiceDetails.serviceOutcome.length / 2)).map((item, index) => (
-                                                <li key={index}>
-                                                    <span className="icon_list_icon">
-                                                        <img src={icon} alt="Check SVG Icon" />
-                                                    </span>
-                                                    <span className="icon_list_text">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <ul className="icon_list unordered_list_block">
-                                            {ServiceDetails.serviceOutcome.slice(Math.ceil(ServiceDetails.serviceOutcome.length / 2)).map((item, index) => (
-                                                <li key={index}>
-                                                    <span className="icon_list_icon">
-                                                        <img src={icon} alt="Check SVG Icon" />
-                                                    </span>
-                                                    <span className="icon_list_text">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
+                                <ul className="icon_list unordered_list_block">
+                                    {service.serviceOutcome.map((item, index) => (
+                                        <li key={index}>
+                                            <span className="icon_list_icon">
+                                                <img src={icon} alt="Check SVG Icon" />
+                                            </span>
+                                            <span className="icon_list_text">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </>
-                        )}
-                        {ServiceDetails.galleryImages && (
-                            <div className="row">
-                                {ServiceDetails.galleryImages.map((image, index) => (
-                                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                                        <div className="details_item_image m-0">
-                                            <img src={image} alt={ServiceDetails.title} />
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
                         )}
                     </div>
                 </section>
@@ -93,12 +70,12 @@ const ServiceSinglePage = (props) => {
             <CtaSection />
             <Footer />
             <Scrollbar />
-            {ServiceDetails.videoId && (
+            {service.videoId && (
                 <ModalVideo
                     channel='youtube'
                     autoplay
                     isOpen={isOpen}
-                    videoId={ServiceDetails.videoId}
+                    videoId={service.videoId}
                     onClose={() => setOpen(false)}
                 />
             )}

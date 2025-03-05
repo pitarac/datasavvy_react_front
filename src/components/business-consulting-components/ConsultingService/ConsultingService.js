@@ -1,14 +1,22 @@
-// src/components/consulting-service/ConsultingService.js
-
-import React from 'react';
-import Services from '../../../api/service';
+import React, { useEffect, useState } from 'react';
+import { fetchServices } from '../../../api/service';
 import { Link } from "react-router-dom";
 import Bg from '../../../images/backgrounds/bg_image_3.webp';
 
-const ConsultingService = (props) => {
+const ConsultingService = () => {
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+        const getServices = async () => {
+            const data = await fetchServices();
+            setServices(data);
+        };
+        getServices();
+    }, []);
+
     const ClickHandler = () => {
         window.scrollTo(10, 0);
-    }
+    };
 
     return (
         <section className="business_consulting_service_section section_space" style={{ backgroundImage: `url(${Bg})` }}>
@@ -27,7 +35,7 @@ const ConsultingService = (props) => {
                 </div>
 
                 <div className="business_consulting_services row">
-                    {Services.map((service, srv) => (
+                    {services.map((service, srv) => (
                         <div className="col-lg-4 col-md-6" key={srv}>
                             <div className="iconbox_block">
                                 <div className="iconbox_icon">
@@ -40,7 +48,7 @@ const ConsultingService = (props) => {
                                         </Link>
                                     </h3>
                                     <p className="mb-0">
-                                        {service.description ? service.description : 'Nossos serviços de consultoria são personalizados para atender às necessidades e objetivos únicos de cada cliente, garantindo alinhamento preciso com suas metas de negócio.'}
+                                        {service.description ? service.description : 'Nossos serviços de consultoria são personalizados para atender às necessidades e objetivos únicos de cada cliente.'}
                                     </p>
                                 </div>
                             </div>

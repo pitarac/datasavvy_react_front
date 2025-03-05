@@ -1,4 +1,3 @@
-// src/main-component/router/index.js
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from '../HomePage/HomePage';
@@ -38,24 +37,24 @@ const AllRoute = () => {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* Rotas Públicas */}
+          {/* 🌍 Rotas Públicas */}
           <Route path="/" element={<Homepage />} />
-          <Route path="home" element={<Homepage />} />
-          <Route path="home_software_company" element={<HomePage2 />} />
-          <Route path="home_business_consulting" element={<HomePage3 />} />
-          <Route path="about" element={<AboutUsPage />} />
-          <Route path="pricing" element={<PricingPage />} />
-          <Route path="portfolio" element={<PortfolioPage />} />
-          <Route path="portfolio_details/:slug" element={<PortfolioSinglePage />} />
-          <Route path="team" element={<TeamPage />} />
-          <Route path="team-single/:slug" element={<TeamSinglePage />} />
-          <Route path="service" element={<ServicePage />} />
-          <Route path="service-single/:slug" element={<ServiceSinglePage />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="blog-single/:slug" element={<BlogDetails />} />
-          <Route path="contact" element={<ContactPage />} />  
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/home_software_company" element={<HomePage2 />} />
+          <Route path="/home_business_consulting" element={<HomePage3 />} />
+          <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/portfolio_details/:slug" element={<PortfolioSinglePage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/team-single/:slug" element={<TeamSinglePage />} />
+          <Route path="/service" element={<ServicePage />} />
+          <Route path="/service-single/:slug" element={<ServiceSinglePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog-single/:slug" element={<BlogDetails />} />
+          <Route path="/contact" element={<ContactPage />} />
 
-          {/* Rotas do Painel Administrativo */}
+          {/* 🔐 Rotas Administrativas (Proteger com PrivateRoute) */}
           <Route path="/admin/login" element={<Login />} />
           <Route path="/admin/dashboard" element={
             <PrivateRoute>
