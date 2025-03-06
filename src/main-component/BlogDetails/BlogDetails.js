@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../components/header/Header';
 import PageTitle from '../../components/pagetitle/PageTitle';
-import Scrollbar from '../../components/scrollbar/scrollbar';
+import Scrollbar from '../../components/scrollbar/scrollbar'; // Nome correto (minúsculo)
 import Footer from '../../components/footer/Footer';
 import CtaSection from '../../components/CtaSection/CtaSection';
-import BlogSingle from '../../components/BlogDetails/BlogDetails';
+import BlogSingle from '../../components/BlogDetails/BlogDetails'; // Confirme que o nome está correto
 
 const BlogDetails = () => {
     const { slug } = useParams();
@@ -31,10 +31,10 @@ const BlogDetails = () => {
     return (
         <Fragment>
             <Header />
-            <main className="page_content about-page">
+            <main className="page_content blog-details-page">
                 <PageTitle 
                     pageTitle={blogDetails.title} 
-                    pagesub={'Detalhes 😍'} 
+                    pagesub={'Detalhes do Blog'} 
                     pageTop={'Blog'}
                 />
                 <BlogSingle blog={blogDetails} />

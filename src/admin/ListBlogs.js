@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './ListBlogs.css'; // Importa o CSS
 
 const ListBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:5001/api/blogs')
-      .then(response => setBlogs(response.data))
+      .then(response => {
+        setBlogs(response.data);
+      })
       .catch(error => console.error('Erro ao buscar blogs:', error));
   }, []);
 
@@ -23,15 +26,21 @@ const ListBlogs = () => {
   };
 
   return (
-    <div>
-      <h2>Lista de Blogs</h2>
-      <Link to="/admin/blogs/new">+ Criar Novo Blog</Link>
-      <ul>
+    <div className="blog-container">
+      <h2 className="blog-title">Lista de Blogs</h2>
+      <Link to="/admin/blogs/new" className="create-button">+ Criar Novo Blog</Link>
+      <ul className="blog-list">
         {blogs.map(blog => (
-          <li key={blog._id}>
-            {blog.title} - {blog.author}  
-            <Link to={`/admin/blogs/edit/${blog._id}`}>✏️ Editar</Link>
-            <button onClick={() => deleteBlog(blog._id)}>❌ Excluir</button>
+          <li key={blog._id} className="blog-item">
+            <div className="blog-info">
+              <h3>{blog.title}</h3>
+              <p><strong>Autor:</strong> {blog.author?.name || 'Desconhecido'}</p>
+              <p><strong>Categoria:</strong> {blog.category?.name || 'Sem categoria'}</p>
+            </div>
+            <div className="blog-actions">
+              <Link to={`/admin/blogs/edit/${blog._id}`} className="edit-button">✏️ Editar</Link>
+              <button className="delete-button" onClick={() => deleteBlog(blog._id)}>❌ Excluir</button>
+            </div>
           </li>
         ))}
       </ul>

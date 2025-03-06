@@ -1,0 +1,100 @@
+/* Estiliza o contêiner principal */
+.blog-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estiliza o título da lista */
+  .blog-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Botão de criar novo blog */
+  .create-button {
+    display: block;
+    text-align: center;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .create-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estiliza a lista de blogs */
+  .blog-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Estiliza cada item da lista */
+  .blog-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Informações do blog */
+  .blog-info {
+    flex-grow: 1;
+  }
+  
+  /* Estiliza os botões de editar e excluir */
+  .blog-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Botão de editar */
+  .edit-button {
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .edit-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Botão de excluir */
+  .delete-button {
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  

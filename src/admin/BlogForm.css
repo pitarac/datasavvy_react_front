@@ -1,29 +1,35 @@
+/* Contêiner principal do formulário */
 .blog-form-container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 40px auto;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Título do formulário */
 .form-title {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: bold;
   color: #333;
 }
 
+/* Estilização geral do formulário */
 .blog-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* Estilização dos inputs de texto, selects e textarea */
 .form-input,
 .form-textarea,
-.file-input {
-  padding: 10px;
+.file-input,
+select {
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
@@ -31,24 +37,42 @@
   transition: border-color 0.3s ease-in-out;
 }
 
+/* Foco nos inputs */
 .form-input:focus,
 .form-textarea:focus,
-.file-input:focus {
+.file-input:focus,
+select:focus {
   border-color: #007bff;
   outline: none;
 }
 
+/* Caixa de texto da descrição curta */
 .form-textarea {
   height: 100px;
-  resize: vertical;
+  resize: vertical; /* Permite aumentar ou diminuir manualmente */
 }
 
+/* Caixa de texto da descrição longa (AUMENTADA) */
+.form-textarea.long-description {
+  height: 250px; /* Maior para textos longos */
+  resize: vertical; /* Mantém redimensionável */
+}
+
+/* Input de upload de imagem */
 .file-input {
   padding: 5px;
 }
 
+/* Estilização dos selects (Autor e Categoria) */
+select {
+  appearance: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* Estilização dos botões */
 .form-button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
   color: #fff;
   background-color: #007bff;
@@ -56,8 +80,62 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  text-align: center;
+  font-weight: bold;
 }
 
 .form-button:hover {
   background-color: #0056b3;
+}
+
+/* Estilização do botão de criar */
+.create-button {
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 12px 18px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.create-button:hover {
+  background-color: #218838;
+}
+
+/* Mensagens de carregamento e erro */
+.loading, .error {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.loading {
+  color: #007bff;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* Para exibir a imagem já existente ao editar */
+.existing-image {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.existing-image a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.existing-image a:hover {
+  text-decoration: underline;
 }

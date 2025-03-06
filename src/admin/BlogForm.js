@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './BlogForm.css'; // Importar o CSS para estilização
@@ -8,8 +8,9 @@ const BlogForm = () => {
     title: '',
     slug: '',
     description: '',
+    longDescription: '',
     author: '',
-    authorTitle: '',
+    category: '',
     create_at: '',
     comment: '',
     thumb: '',
@@ -17,7 +18,29 @@ const BlogForm = () => {
   });
 
   const [image, setImage] = useState(null);
+  const [authors, setAuthors] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  // Carregar autores e categorias do backend
+  useEffect(() => {
+    Promise.all([
+      axios.get('http://localhost:5001/api/categories'),
+      axios.get('http://localhost:5001/api/authors')
+    ])
+    .then(([categoriesResponse, authorsResponse]) => {
+      setCategories(categoriesResponse.data);
+      setAuthors(authorsResponse.data);
+      setLoading(false);
+    })
+    .catch(error => {
+      console.error('Erro ao carregar dados:', error);
+      setError('Erro ao carregar categorias e autores.');
+      setLoading(false);
+    });
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,8 +57,9 @@ const BlogForm = () => {
     formDataToSend.append('title', formData.title);
     formDataToSend.append('slug', formData.slug);
     formDataToSend.append('description', formData.description);
-    formDataToSend.append('author', formData.author);
-    formDataToSend.append('authorTitle', formData.authorTitle);
+    formDataToSend.append('longDescription', formData.longDescription);
+    formDataToSend.append('author', formData.author);  // Agora envia o _id do autor
+    formDataToSend.append('category', formData.category);  // Agora envia o _id da categoria
     formDataToSend.append('create_at', formData.create_at);
     formDataToSend.append('comment', formData.comment);
     formDataToSend.append('thumb', formData.thumb);
@@ -59,6 +83,14 @@ const BlogForm = () => {
       alert('Erro ao criar blog. Por favor, tente novamente.');
     }
   };
+
+  if (loading) {
+    return <div className="loading">Carregando...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return (
     <div className="blog-form-container">
@@ -95,35 +127,55 @@ const BlogForm = () => {
           className="form-input file-input"
         />
 
-        {/* Descrição */}
+        {/* Descrição Curta */}
         <textarea
           name="description"
-          placeholder="Descrição"
+          placeholder="Descrição Curta"
           value={formData.description}
           onChange={handleChange}
           required
           className="form-textarea"
         />
 
-        {/* Autor */}
-        <input
-          type="text"
-          name="author"
-          placeholder="Autor"
-          value={formData.author}
+        {/* Descrição Longa */}
+        <textarea
+          name="longDescription"
+          placeholder="Descrição Longa"
+          value={formData.longDescription}
           onChange={handleChange}
-          className="form-input"
+          required
+          className="form-textarea"
         />
 
-        {/* Cargo do Autor */}
-        <input
-          type="text"
-          name="authorTitle"
-          placeholder="Cargo do Autor"
-          value={formData.authorTitle}
+        {/* Autor */}
+        <label>Autor</label>
+        <select
+          name="author"
+          value={formData.author}
           onChange={handleChange}
+          required
           className="form-input"
-        />
+        >
+          <option value="">Selecione um Autor</option>
+          {authors.map((a) => (
+            <option key={a._id} value={a._id}>{a.name}</option>
+          ))}
+        </select>
+
+        {/* Categoria */}
+        <label>Categoria</label>
+        <select
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          required
+          className="form-input"
+        >
+          <option value="">Selecione uma Categoria</option>
+          {categories.map((c) => (
+            <option key={c._id} value={c._id}>{c.name}</option>
+          ))}
+        </select>
 
         {/* Data de Criação */}
         <input
@@ -145,17 +197,8 @@ const BlogForm = () => {
           className="form-input"
         />
 
-        {/* Thumb (categoria ou tag) */}
-        <input
-          type="text"
-          name="thumb"
-          placeholder="Categoria (thumb)"
-          value={formData.thumb}
-          onChange={handleChange}
-          className="form-input"
-        />
-
         {/* Classe do Blog */}
+        <label>Formato do Blog</label>
         <select
           name="blClass"
           value={formData.blClass}
